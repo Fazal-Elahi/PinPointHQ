@@ -1,0 +1,90 @@
+{
+ "source": {
+  "filename": "legacy_ats_small.csv",
+  "sha256": "83c8952a481979b9",
+  "encoding": "utf-8",
+  "bom": true,
+  "rows": 14,
+  "header_row": 1
+ },
+ "approval": {
+  "plan_hash": "sha256:54a9aa3489a8c48c",
+  "mapping_hash": "sha256:c0197d7518a0abc8",
+  "vocabulary_hash": "sha256:7f409b6ab75aa623",
+  "source_sha256": "83c8952a481979b9",
+  "destination": {
+   "subdomain": "acme",
+   "account_fingerprint": "822b33ad87c148a0"
+  },
+  "tool_version": "0.5.0",
+  "retention": {
+   "cutoff": "2019-01-01",
+   "declined": false
+  },
+  "coverage": {
+   "status_values": 1.0,
+   "requirements_resolved": true
+  },
+  "acknowledgements": [
+   "job_seeker_notification_behaviour_unverified"
+  ],
+  "approved_by": "fazal",
+  "approved_at": "2026-09-09T21:26:50"
+ },
+ "counts": {
+  "source_rows": 14,
+  "excluded": 1,
+  "failed_validation": 2,
+  "queued": 3,
+  "tier1_rows": 4,
+  "tier2_rows": 4
+ },
+ "identity": {
+  "distinct_person_keys": 7,
+  "people_new": 6,
+  "people_matched": 1
+ },
+ "errors_by_code": {
+  "ADDRESS2_ON_US": 1,
+  "MISSING_REQUIRED_PHONE": 1,
+  "BEFORE_RETENTION_CUTOFF": 1
+ },
+ "notifications": {
+  "applications": {
+   "suppressed": true,
+   "mechanism": "skip_notifications_on_create"
+  },
+  "job_seekers": {
+   "suppressed": "unknown",
+   "evidence": "field absent from job_seekers_attributes_post (additionalProperties:false)",
+   "acknowledged_at_gate_2": true
+  }
+ },
+ "invariants": [
+  {
+   "rule": "source_rows = excluded + failed + queued + tier1 + tier2",
+   "pass": true
+  },
+  {
+   "rule": "distinct_person_keys = people_new + people_matched (disjoint)",
+   "pass": true
+  },
+  {
+   "rule": "tier1_rows = rows(tier1_applications.csv)",
+   "pass": true
+  },
+  {
+   "rule": "tier2_rows = rows(tier2_job_seekers.csv)",
+   "pass": true
+  },
+  {
+   "rule": "queued = rows(exceptions.csv) - failed_validation",
+   "pass": true
+  }
+ ],
+ "not_preserved": [
+  "time-of-day and timezone on original application dates (date_value is format:date)",
+  "original created_at on all records (read-only on both surfaces)",
+  "job association for Tier 2 rows beyond a tag"
+ ]
+}

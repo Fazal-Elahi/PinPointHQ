@@ -1,0 +1,178 @@
+{
+ "source": {
+  "filename": "legacy_ats_small.csv",
+  "sha256": "83c8952a481979b9",
+  "encoding": "utf-8",
+  "bom": true,
+  "rows": 14,
+  "header_row": 1
+ },
+ "anomalies": [
+  "duplicate header 'notes'",
+  "2 trailing junk rows discarded",
+  "BOM present, stripped"
+ ],
+ "columns": [
+  {
+   "index": 0,
+   "name": "Candidate Name",
+   "normalized_name": "candidate name",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 12,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 1,
+   "name": "E-mail Address",
+   "normalized_name": "e-mail address",
+   "duplicate_header": false,
+   "null_rate": 0.071,
+   "cardinality": 11,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 2,
+   "name": "Phone",
+   "normalized_name": "phone",
+   "duplicate_header": false,
+   "null_rate": 0.071,
+   "cardinality": 11,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 3,
+   "name": "Applied For",
+   "normalized_name": "applied for",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 4,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 4,
+   "name": "Status",
+   "normalized_name": "status",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 5,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 5,
+   "name": "Applied Date",
+   "normalized_name": "applied date",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 13,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 6,
+   "name": "Address 1",
+   "normalized_name": "address 1",
+   "duplicate_header": false,
+   "null_rate": 0.071,
+   "cardinality": 11,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 7,
+   "name": "Address 2",
+   "normalized_name": "address 2",
+   "duplicate_header": false,
+   "null_rate": 0.929,
+   "cardinality": 1,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 8,
+   "name": "City",
+   "normalized_name": "city",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 11,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 9,
+   "name": "State",
+   "normalized_name": "state",
+   "duplicate_header": false,
+   "null_rate": 0.857,
+   "cardinality": 2,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 10,
+   "name": "Postcode",
+   "normalized_name": "postcode",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 12,
+   "pii_class": "direct_identifier",
+   "distinct_values": null
+  },
+  {
+   "index": 11,
+   "name": "Country",
+   "normalized_name": "country",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 2,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 12,
+   "name": "Source",
+   "normalized_name": "source",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 6,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 13,
+   "name": "Notes",
+   "normalized_name": "notes",
+   "duplicate_header": true,
+   "null_rate": 0.714,
+   "cardinality": 4,
+   "pii_class": "free_text",
+   "distinct_values": null
+  },
+  {
+   "index": 14,
+   "name": "Legacy ID",
+   "normalized_name": "legacy id",
+   "duplicate_header": false,
+   "null_rate": 0.0,
+   "cardinality": 13,
+   "pii_class": "none",
+   "distinct_values": null
+  },
+  {
+   "index": 15,
+   "name": "Notes",
+   "normalized_name": "notes",
+   "duplicate_header": true,
+   "null_rate": 0.0,
+   "cardinality": 1,
+   "pii_class": "free_text",
+   "distinct_values": null
+  }
+ ],
+ "column_signature": "383e84daa54ccd6b"
+}

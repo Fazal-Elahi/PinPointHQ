@@ -1,0 +1,5 @@
+row,external_system_reference,candidate_id,pipeline_source,source_job_title_tag,first_name,last_name,email,phone,address1,address2,town,state_province,postcode,country,original_application_date,import_order,depends_on_row
+1,PPM-722e3dad8cb64fd2a17c1364,,Careers Fair,Graduate Scheme 2024,Ada,Lovelace,ada@example.com,+447700900001,12 Bell St,,London,,NW1 6TB,GB,2024-03-12,1,
+5,PPM-fa6d739a0a796058f0112cb3,,Job Board,Marketing Exec,Margaret,Hamilton,mh@example.com,+447700900005,9 Apollo Cl,,Leeds,,LS1 2AB,GB,2022-09-20,4,
+6,PPM-3a9c6bceba12714ac8e102e1,,Direct,Product Owner,Jean,Bartik,jb@example.com,+447700900006,2 ENIAC Rd,,Glasgow,,G1 1XW,GB,2021-07-14,5,
+7,PPM-dec35bf156ffac7bded31087,,Careers Fair,Graduate Scheme 2024,Radia,Perlman,rp@example.com,+447700900007,7 Spanning Tree,,Oxford,,OX1 2JD,GB,2025-01-09,6,

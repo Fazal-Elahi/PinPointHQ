@@ -1,0 +1,9 @@
+row,person_key,identity,candidate_id,depends_on_row,resolved_by_human
+1,ada@example.com,new_person,,,False
+2,grace@example.com,existing_person,9001,,False
+4,kj@example.com,new_person,,,False
+5,mh@example.com,new_person,,,False
+6,jb@example.com,new_person,,,False
+7,rp@example.com,new_person,,,False
+9,fa@example.com,new_person,,,False
+12,ada@example.com,new_person,,1,False

@@ -1,0 +1,24 @@
+{
+ "plan_hash": "sha256:54a9aa3489a8c48c",
+ "mapping_hash": "sha256:c0197d7518a0abc8",
+ "vocabulary_hash": "sha256:7f409b6ab75aa623",
+ "source_sha256": "83c8952a481979b9",
+ "destination": {
+  "subdomain": "acme",
+  "account_fingerprint": "822b33ad87c148a0"
+ },
+ "tool_version": "0.5.0",
+ "retention": {
+  "cutoff": "2019-01-01",
+  "declined": false
+ },
+ "coverage": {
+  "status_values": 1.0,
+  "requirements_resolved": true
+ },
+ "acknowledgements": [
+  "job_seeker_notification_behaviour_unverified"
+ ],
+ "approved_by": "fazal",
+ "approved_at": "2026-09-09T21:26:50"
+}

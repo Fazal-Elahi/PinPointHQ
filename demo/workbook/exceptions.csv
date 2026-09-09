@@ -1,0 +1,6 @@
+row,reason,code,field,first_name,last_name,email,phone,source_record_id
+3,failed_validation,ADDRESS2_ON_US,address2,Alan,Turing,alan@example.com,+15550100,LEG-1003
+8,failed_validation,MISSING_REQUIRED_PHONE,phone,Barbara,Liskov,bl@example.com,,LEG-1008
+10,ambiguous_multiple_match,ambiguous_multiple_match,identity,Unknown,Applicant,,+447700900077,LEG-1010
+11,conflicting_keys,conflicting_keys,identity,Conflicted,Record,grace@example.com,+447700900011,LEG-9999
+13,duplicate_source_row,duplicate_source_row,identity,Ada,Lovelace,ada@example.com,+447700900001,LEG-1001

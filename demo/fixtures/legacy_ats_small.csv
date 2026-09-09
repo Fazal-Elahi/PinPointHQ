@@ -1,0 +1,18 @@
+﻿Candidate Name,E-mail Address,Phone,Applied For,Status,Applied Date,Address 1,Address 2,City,State,Postcode,Country,Source,Notes,Legacy ID,Notes
+Ada Lovelace,ada@example.com,+44 7700 900001,Graduate Scheme 2024,Phone Screen,12/03/2024,12 Bell St,,London,,NW1 6TB,GB,Careers Fair,keen,LEG-1001,-
+Grace Hopper,GRACE@example.com ,07700900002,Graduate Scheme 2024,Applied,05/06/2024,3 Navy Rd,,Bristol,,BS1 4ST,GB,LinkedIn,,LEG-1002,-
+Alan Turing,alan@example.com,+1 555 0100,Senior Data Engineer,Technical Screen,03/02/2025,1 Enigma Way,Suite 400,Princeton,NJ,08540,US,Referral,,LEG-1003,-
+Katherine Johnson,kj@example.com,+1 555 0101,Senior Data Engineer,Take-home,04/03/2019,5 Orbit Ave,,Hampton,VA,23666,US,Direct,,LEG-1004,-
+Margaret Hamilton,mh@example.com,+44 7700 900005,Marketing Exec,Applied,20/09/2022,9 Apollo Cl,,Leeds,,LS1 2AB,GB,Job Board,,LEG-1005,-
+Jean Bartik,jb@example.com,+44 7700 900006,Product Owner,Applied,14/07/2021,2 ENIAC Rd,,Glasgow,,G1 1XW,GB,Direct,,LEG-1006,-
+Radia Perlman,rp@example.com,+44 7700 900007,Graduate Scheme 2024,Final,09/01/2025,7 Spanning Tree,,Oxford,,OX1 2JD,GB,Careers Fair,,LEG-1007,-
+Barbara Liskov,bl@example.com,,Graduate Scheme 2024,Applied,01/02/2025,4 Substitution St,,Cambridge,,CB2 1TN,GB,Direct,,LEG-1008,-
+Frances Allen,fa@example.com,+44 7700 900009,Graduate Scheme 2024,Applied,11/11/2024,8 Optimiser Rd,,Manchester,,M1 3EJ,GB,LinkedIn,,LEG-1009,-
+Unknown Applicant,,+44 7700 900077,Graduate Scheme 2024,Applied,12/11/2024,,,Leeds,,LS2 7EW,GB,Direct,no email on file,LEG-1010,-
+Conflicted Record,grace@example.com,+44 7700 900011,Graduate Scheme 2024,Applied,03/03/2025,1 Clash Rd,,Derby,,DE1 1AA,GB,Direct,,LEG-9999,-
+Ada Lovelace,ada@example.com,+44 7700 900001,Graduate Scheme 2024,Applied,20/08/2025,12 Bell St,,London,,NW1 6TB,GB,Careers Fair,reapplied,LEG-1011,-
+Ada Lovelace,ada@example.com,+44 7700 900001,Graduate Scheme 2024,Phone Screen,12/03/2024,12 Bell St,,London,,NW1 6TB,GB,Careers Fair,dup export row,LEG-1001,-
+Hedy Lamarr,hedy@example.com,+44 7700 900050,Marketing Exec,Applied,06/06/2013,6 Spectrum Way,,Cardiff,,CF10 1EP,GB,Agency,,LEG-0007,-
+
+Exported from LegacyATS on 2026-08-30,,,,,,,,,,,,,,,
+14 records,,,,,,,,,,,,,,,

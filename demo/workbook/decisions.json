@@ -1,0 +1,82 @@
+{
+ "gate0_columns": [
+  "Applied For",
+  "Status",
+  "Source"
+ ],
+ "gate1_unmappable_statuses": {
+  "88": [
+   "Final",
+   "Take-home",
+   "Technical Screen",
+   "Phone Screen"
+  ],
+  "91": [
+   "Phone Screen",
+   "Offer"
+  ]
+ },
+ "gate1_requirement_waivers": {
+  "91": [
+   "resume_requirement"
+  ]
+ },
+ "gate1_rebound_to_tier2": [],
+ "retention": {
+  "cutoff": "2019-01-01",
+  "declined": false
+ },
+ "transforms": {
+  "Candidate Name": {
+   "fn": "split_name",
+   "order": "given_first"
+  },
+  "E-mail Address": {
+   "fn": "norm_email"
+  },
+  "Phone": {
+   "fn": "normalise_phone",
+   "default_region": "GB"
+  },
+  "Applied For": {
+   "fn": "map_value"
+  },
+  "Status": {
+   "fn": "map_value_per_job"
+  },
+  "Applied Date": {
+   "fn": "parse_date",
+   "locale": "en_GB",
+   "ambiguous": "prefer_dmy"
+  },
+  "Address 1": {
+   "fn": "trim"
+  },
+  "Address 2": {
+   "fn": "trim"
+  },
+  "City": {
+   "fn": "trim"
+  },
+  "State": {
+   "fn": "trim"
+  },
+  "Postcode": {
+   "fn": "trim"
+  },
+  "Country": {
+   "fn": "trim"
+  },
+  "Source": {
+   "fn": "trim"
+  },
+  "Legacy ID": {
+   "fn": "trim"
+  },
+  "Notes": {
+   "fn": "drop"
+  }
+ },
+ "approved_by": "fazal",
+ "approved_at": "2026-09-09T21:26:50"
+}

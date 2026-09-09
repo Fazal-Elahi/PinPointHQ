@@ -1,0 +1,12 @@
+{
+ "signature": "383e84daa54ccd6b",
+ "account": "acme",
+ "semantic_hit": true,
+ "binding_hit": true,
+ "semantic_uses": 4,
+ "binding_uses": 3,
+ "asked": 1,
+ "prefilled": 5,
+ "invalidated": 2,
+ "by_model": 5
+}

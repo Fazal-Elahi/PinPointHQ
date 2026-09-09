@@ -1,0 +1,341 @@
+
+==============================================================================
+  PINPOINT MIGRATION COPILOT — vertical slice
+  7 stages · 3 human gates · 2 tiers · 0 writes issued by a model
+  mode: AUTO (recorded answers)
+==============================================================================
+
+==============================================================================
+· §7.0  PROFILE THE SOURCE
+  script only — no human, no writes
+==============================================================================
+  rows=14  columns=16
+  anomalies: ["duplicate header 'notes'", '2 trailing junk rows discarded', 'BOM present, stripped']
+  'Notes' appears at indices [13, 15] — columns are addressed by (index, normalized_name), never by name
+  distinct values emitted: False  ← none, by design
+  column signature: 383e84daa54ccd6b
+     [2m| the AI has not seen a single cell value yet, and will not until you say so[0m
+     [2m| two columns are both called 'Notes' — they are tracked by position, not name[0m
+  
+  No semantic precedent for this column shape — cold start, you decide everything.
+
+==============================================================================
+█ GATE 0  WHICH COLUMNS MAY THE MODEL SEE VALUES FROM?
+  HUMAN DECISION — the flow stops here
+==============================================================================
+  The profile above emitted no cell values at all. But a model that has seen no values
+  cannot map "Phone Screen" to a stage, because it does not know that value exists.
+  So you name the columns whose distinct values may be shown. Everything else stays dark.
+  
+  idx  column               pii_class          distinct   null%
+    0  Candidate Name       direct_identifier        12      0%
+    1  E-mail Address       direct_identifier        11      7%
+    2  Phone                direct_identifier        11      7%
+    3  Applied For          none                      4      0%
+    4  Status               none                      5      0%
+    5  Applied Date         none                     13      0%
+    6  Address 1            direct_identifier        11      7%
+    7  Address 2            direct_identifier         1     93%
+    8  City                 none                     11      0%
+    9  State                none                      2     86%
+   10  Postcode             direct_identifier        12      0%
+   11  Country              none                      2      0%
+   12  Source               none                      6      0%
+   13  Notes                free_text                 4     71%
+   14  Legacy ID            none                     13      0%
+   15  Notes                free_text                 1      0%
+
+     [2m| TYPE:  4,3,12,1     (that last one is the email column)[0m
+     [2m| then watch it refuse, and read what the refusal does NOT say[0m
+  column indices the model may see values from (comma separated) [4,3,12]: 4,3,12      ← recorded answer (--auto)
+
+  GATE 0 PASSED — the model may now see these values, and only these:
+     Applied For    → ['Graduate Scheme 2024', 'Marketing Exec', 'Product Owner', 'Senior Data Engineer']
+     Status         → ['Applied', 'Final', 'Phone Screen', 'Take-home', 'Technical Screen']
+     Source         → ['Agency', 'Careers Fair', 'Direct', 'Job Board', 'LinkedIn', 'Referral']
+
+==============================================================================
+· §7.2  DISCOVER THE TARGET ACCOUNT
+  script only — no human, no writes
+==============================================================================
+  job  88 Graduate Scheme 2024   open      accepts=True  require_phone=True  cv=optional
+          stages: Applied(10,workflow), Phone Screen(12,workflow), Onsite(14,workflow), Offer(16,workflow), Hired(18,workflow), Rejected(20,workflow)
+  job  91 Senior Data Engineer   open      accepts=True  require_phone=False cv=required
+          stages: Applied(30,workflow), Technical Screen(32,workflow), Final(34,workflow), Take-home(91001,job)
+  job  42 Marketing Exec         archived  accepts=False require_phone=False cv=optional
+          stages: Applied(10,workflow), Phone Screen(12,workflow), Onsite(14,workflow), Offer(16,workflow), Hired(18,workflow), Rejected(20,workflow)
+  
+  job 91's 'Take-home' stage is owned by the JOB, not by its workflow.
+  Resolving stages against the workflow alone would produce an id that job does not have.
+
+==============================================================================
+▓ §7.3  PROPOSE THE MAPPING
+  LLM — proposes only; the next step is a human gate
+==============================================================================
+  Input to the model: profile.json + vocabulary.json + target_catalog.json.
+  No rows. Transforms are chosen from a closed allowlist — the model never writes code.
+  
+  col  0 Candidate Name     → first_name,last_name               split_name order=given_first  conf=0.92
+  col  1 E-mail Address     → email                              norm_email  conf=0.99
+  col  2 Phone              → phone                              normalise_phone default_region=GB  conf=0.9
+  col  3 Applied For        → job_id                             map_value  conf=0.88
+  col  4 Status             → stage_id                           map_value_per_job  conf=0.85
+  col  5 Applied Date       → custom_attribute:original_applicat parse_date locale=en_GB ambiguous=prefer_dmy  conf=0.71
+  col  6 Address 1          → address1                           trim  conf=0.99
+  col  7 Address 2          → address2                           trim  conf=0.99
+  col  8 City               → town                               trim  conf=0.95
+  col  9 State              → state_province                     trim  conf=0.93
+  col 10 Postcode           → postcode                           trim  conf=0.98
+  col 11 Country            → country                            trim  conf=0.99
+  col 12 Source             → channel_source                     trim  conf=0.8
+  col 14 Legacy ID          → _source_record_id                  trim  conf=0.96
+  col 13 Notes              → (dropped)                          drop  conf=0.6
+  col 15 Notes              → (dropped)                          drop  conf=0.6
+  
+  Both 'Notes' columns (13 and 15) are mapped separately by index — name-only
+  addressing would silently collide.
+  'Product Owner' → None: no destination job. Not an error; it routes those rows to Tier 2.
+  parse_date.locale has NO DEFAULT, so '04/03/2019' cannot resolve silently.
+     [2m| 04/03/2019 is either 4 March or 3 April. No software can tell you which.[0m
+     [2m| so the setting has no default — a person decides, and the record says who[0m
+
+==============================================================================
+█ GATE 1  MAPPING, COVERAGE AND RETENTION
+  HUMAN DECISION — the flow stops here
+==============================================================================
+  (a) STATUS COVERAGE — every status must be MAPPED or declared UNMAPPABLE, per job.
+      An unmapped status is a mapping gap. Closing it here costs one decision;
+      discovering it at validation costs you the row.
+  
+     [2m| press Enter through these — 'u' sends those people to the talent pool[0m
+     [2m| or type a stage id to route them into a live pipeline instead[0m
+     [2m| before this gate existed, an unmapped status silently DELETED the row[0m
+
+  job 88 · Graduate Scheme 2024
+    stages available: Applied=10, Phone Screen=12, Onsite=14, Offer=16, Hired=18, Rejected=20
+    status 'Final' → stage id, or 'u' = unmappable (routes those rows to Tier 2) [u]: u      ← recorded answer (--auto)
+      → 'Final' declared UNMAPPABLE on job 88
+    status 'Take-home' → stage id, or 'u' = unmappable (routes those rows to Tier 2) [u]: u      ← recorded answer (--auto)
+      → 'Take-home' declared UNMAPPABLE on job 88
+    status 'Technical Screen' → stage id, or 'u' = unmappable (routes those rows to Tier 2) [u]: u      ← recorded answer (--auto)
+      → 'Technical Screen' declared UNMAPPABLE on job 88
+
+  job 91 · Senior Data Engineer
+    stages available: Applied=30, Technical Screen=32, Final=34, Take-home=91001
+    status 'Phone Screen' → stage id, or 'u' = unmappable (routes those rows to Tier 2) [u]: u      ← recorded answer (--auto)
+      → 'Phone Screen' declared UNMAPPABLE on job 91
+
+  (b) REQUIREMENT REACHABILITY — can the SOURCE supply what the job requires at all?
+  
+  job 91 Senior Data Engineer requires a CV. The source has NO CV column at all,
+     so every row bound for it fails identically — that is a mapping defect,
+     not 14 row defects. Raised here as SOURCE_LACKS_REQUIRED_FIELD.
+     [2m| one mapping problem, not a hundred row problems — Enter waives it, on the record[0m
+    (w)aive the requirement, or (r)ebind those rows to Tier 2? [w]: w      ← recorded answer (--auto)
+      → waived, and recorded in the approval artifact
+
+  RETENTION IS NEVER STORED IN A PRECEDENT. The lawful basis for one customer's data
+  says nothing about another's, so this is asked every single run.
+  
+  (c) RETENTION — a hard block. A 14-year export contains records the customer may have
+      no lawful basis to keep, and migrating them re-establishes processing.
+  
+  source date range: 2013-06-06 → 2025-08-20
+  
+     [2m| press Enter for 2019-01-01, or type 'none' to decline and give a reason[0m
+     [2m| the one gate where the right answer is sometimes 'import less'[0m
+  retention cutoff (YYYY-MM-DD), or 'none' to decline with a reason [2019-01-01]: 2019-01-01      ← recorded answer (--auto)
+  → 1 of 14 rows fall before it and will be excluded
+  
+  your name (recorded as the Gate 1 approver) [fazal]: fazal      ← recorded answer (--auto)
+
+  GATE 1 PASSED — status coverage 100%
+  Because coverage is complete, STAGE_NOT_ON_JOB is now unreachable at validation:
+  no row can be discarded for a status decision you were never asked to make.
+
+==============================================================================
+· §7.5  VALIDATE AND ASSIGN TIERS
+  script only — no human, no writes
+==============================================================================
+  Deterministic transforms, then Pinpoint's write rules. No API calls, no writes.
+  Three outcomes only: ok / fail / excluded. There is no warn-then-proceed.
+  
+     [2m| Pinpoint's docs say the API will NOT check required fields — the client must[0m
+     [2m| without this stage you create incomplete records the API happily accepts[0m
+  verdicts: {'ok': 11, 'fail': 2, 'excluded': 1}    tiers: {1: 10, 2: 3, None: 1}
+
+   ✓ row  1  T1  job=  88 stage=    12  
+   ✓ row  2  T1  job=  88 stage=    10  
+   ✗ row  3  T1  job=  91 stage=    32  ADDRESS2_ON_US
+   ✓ row  4  T1  job=  91 stage= 91001  
+   ✓ row  5  T2  job=  42 stage=     -  
+   ✓ row  6  T2  job=   - stage=     -  
+   ✓ row  7  T2  job=  88 stage=     -  
+   ✗ row  8  T1  job=  88 stage=    10  MISSING_REQUIRED_PHONE
+   ✓ row  9  T1  job=  88 stage=    10  
+   ✓ row 10  T1  job=  88 stage=    10  
+   ✓ row 11  T1  job=  88 stage=    10  
+   ✓ row 12  T1  job=  88 stage=    10  
+   ✓ row 13  T1  job=  88 stage=    12  
+   — row 14  --  job=  42 stage=     -  BEFORE_RETENTION_CUTOFF
+  
+  dry_run.json (model-visible) carries counts and codes only.
+  Row-level verdicts stay in the private lane — a verdict never carries a value.
+
+==============================================================================
+· §7.6  RESOLVE IDENTITY
+  script only — no human, no writes
+==============================================================================
+  Local index built from GET /candidates. `candidates.email` is a READABLE field, so a bulk
+  extract can be indexed locally even though /candidates has no filter[email].
+  emails indexed=5  phones indexed=4
+  Deduplication keys on the SOURCE RECORD, never on the person.
+  
+     [2m| three questions, not one: which human, which application, which pool record[0m
+     [2m| exact matches only — there is no fuzzy matching anywhere in this system[0m
+   row  1  T1  new_person                 candidate=-
+   row  2  T1  existing_person            candidate=9001
+   row  4  T1  new_person                 candidate=-
+   row  5  T2  new_person                 candidate=-
+   row  6  T2  new_person                 candidate=-
+   row  7  T2  new_person                 candidate=-
+   row  9  T1  new_person                 candidate=-
+   row 10  T1  ambiguous_multiple_match   candidate=-  conflict={"phone": [9003, 9004]}
+   row 11  T1  conflicting_keys           candidate=-  conflict={"esr": [9005], "email": [9001]}
+   row 12  T1  new_person                 candidate=-
+   row 13  T1  duplicate_source_row       candidate=-
+
+==============================================================================
+█ QUEUE  AMBIGUOUS AND CONFLICTING IDENTITIES
+  HUMAN DECISION — the flow stops here
+==============================================================================
+  These are not guessed. 'Probably the same person' is a data-protection incident,
+  not a convenience. You resolve them, or they go to workbook/exceptions.csv.
+  
+     [2m| press Enter twice to defer both, or type 9003 to bind the first one live[0m
+
+  row 10 · ambiguous_multiple_match
+    source: Unknown Applicant · (no email) · +447700900077 · record LEG-1010
+    key 'phone' matches candidates [9003, 9004]
+    candidate id to bind (9003/9004), or 'd' to defer to exceptions.csv [d]: d      ← recorded answer (--auto)
+      → deferred; it will appear in workbook/exceptions.csv for a human
+
+  row 11 · conflicting_keys
+    source: Conflicted Record · grace@example.com · +447700900011 · record LEG-9999
+    key 'esr' matches candidates [9005]
+    key 'email' matches candidates [9001]
+    candidate id to bind (9001/9005), or 'd' to defer to exceptions.csv [d]: d      ← recorded answer (--auto)
+      → deferred; it will appear in workbook/exceptions.csv for a human
+
+  row 13 · duplicate_source_row
+    source: Ada Lovelace · ada@example.com · +447700900001 · record LEG-1001
+     same source record id as an earlier row — dropped, not a person question
+
+  proceeding: 8    human queue: 3
+
+==============================================================================
+· §7.7  COLLAPSE WITHIN-RUN PEOPLE
+  script only — no human, no writes
+==============================================================================
+  The §7.6 index was built from the account BEFORE anything is created. A person appearing
+  twice in the source is absent from it on BOTH occurrences and resolves as new_person twice.
+  Since a candidate is a side effect of a create (§3.1), that makes two humans.
+  
+     [2m| Pinpoint cannot create a person directly — a person falls out of a create[0m
+     [2m| so identity is not a lookup, it is a consequence of write order[0m
+   row 12 shares person_key with row 1 → must WAIT and reuse the returned candidate id
+
+  7 distinct people across 8 rows
+
+==============================================================================
+█ GATE 2  SIGN THE WORKBOOK
+  HUMAN DECISION — the flow stops here
+==============================================================================
+  This approval is written by a human CLI invocation, not by a model. It pins four hashes;
+  anything that consumes the workbook recomputes them and refuses on a mismatch.
+  
+     [2m| you must TYPE the word approve — Enter alone will not sign it[0m
+     [2m| then Enter at the next prompt to watch one edit void the signature[0m
+    plan_hash          sha256:43e5b9e89500d337
+    mapping_hash       sha256:196112f1d1d435f8
+    vocabulary_hash    sha256:7e684b89fa071da6
+    source_sha256      83c8952a481979b9
+
+  destination      acme (fingerprint 822b33ad87c148a0)
+  retention        {'cutoff': '2019-01-01', 'declined': False}
+  tier 1 rows      5   →  applications
+  tier 2 rows      3   →  job_seekers
+  human queue      3   →  exceptions.csv
+  acknowledgements job_seeker_notification_behaviour_unverified (§16.1, unresolved)
+  
+  type 'approve' to sign, or 'abort': approve      ← recorded answer (--auto)
+  approved by [fazal]: fazal      ← recorded answer (--auto)
+
+  signed by fazal at 2026-09-09T21:26:49
+  
+  demonstrate the binding? (alter one transform and re-check the approval) [y/n]: y      ← recorded answer (--auto)
+    changed parse_date.locale: en_GB → en_US  ('04/03/2019' would become 3 April)
+    approval mapping_hash  sha256:196112f1d1d435f8
+    recomputed mapping_hash sha256:88c98c9dbcd45fec
+    → MISMATCH — approval VOID, the run refuses to start
+    The change was never applied. This is why the approval is a file of hashes and
+    not a status field: a model could edit a status field, but it cannot make
+    a stale hash match a changed mapping.
+
+==============================================================================
+· §7.9  EMIT THE WORKBOOK
+  script only — no human, no writes
+==============================================================================
+  Deterministic assembly. No decisions are made here — every decision was made at a gate.
+  
+     [2m| this is the deliverable — nine files a human imports and signs for[0m
+     [2m| the five invariants must balance, or the run is a bug not a rounding error[0m
+  workbook/
+    README.md                                  859 bytes
+    manifest.json                             2091 bytes
+    tier1_applications.csv         5 rows      857 bytes
+    tier2_job_seekers.csv          3 rows      673 bytes
+    exceptions.csv                 5 rows      574 bytes
+    excluded.csv                   1 rows       89 bytes
+    identity_report.csv            8 rows      383 bytes
+    decisions.json                            1166 bytes
+    not_preserved.md                           234 bytes
+
+  invariants:
+   PASS  source_rows = excluded + failed + queued + tier1 + tier2 14 == 1+2+3+5+3
+   PASS  distinct_person_keys = people_new + people_matched (disjoint) 7 == 6+1
+   PASS  tier1_rows = rows(tier1_applications.csv)            5
+   PASS  tier2_rows = rows(tier2_job_seekers.csv)             3
+   PASS  queued = rows(exceptions.csv) - failed_validation    3 == 5-2
+  
+  Everything except manifest.json holds row-level PII and lives in the private lane.
+  manifest.json carries counts, codes and hashes only — it is the one file a model may read.
+
+
+==============================================================================
+· §8  CAPTURE PRECEDENT
+  script only — no human, no writes
+==============================================================================
+  Only completed runs teach. Two stores, and what goes in each is the whole design.
+  
+  precedents/semantic/383e84daa54ccd6b.json          uses=1   PORTABLE
+     carries: transforms, Gate 0 column selection, source header list
+     because it describes the SOURCE FILE and nothing about a destination
+  precedents/bindings/822b33ad87c148a0__383e84daa54ccd6b.json  uses=1   ACCOUNT-SCOPED
+     carries: job titles → ids, status → stage ids, unmappable declarations
+     keyed by (account fingerprint, column signature). Never offered to another account.
+  
+  NOT stored in either: the retention decision. It belongs to the customer in front
+  of you, and replaying it would be replaying someone else's legal basis.
+
+  ──────────────────────────────────────────────────────────────────────────
+  GATE 1 STATUS DECISIONS — where each answer came from
+    proposed by the model     6   (matched a stage by name on this account)
+    supplied by precedent     0   (stored binding, re-resolved as still valid)
+    asked of you              5
+    bindings invalidated      0   (stale ids, re-asked not repaired)
+    → 54% of Gate 1 needed no human input
+  ──────────────────────────────────────────────────────────────────────────
+
+  stopping at the workbook (--no-execute). §12 is optional by design.
+

@@ -1,0 +1,52 @@
+{
+ "projection": {
+  "columns": [
+   {
+    "index": 3,
+    "name": "Applied For"
+   },
+   {
+    "index": 4,
+    "name": "Status"
+   },
+   {
+    "index": 12,
+    "name": "Source"
+   }
+  ],
+  "max_distinct_per_column": 500,
+  "max_total_values": 2000,
+  "max_value_length": 120,
+  "forbid_patterns": [
+   "email",
+   "phone",
+   "postcode",
+   "dob"
+  ],
+  "approved_by": "(gate 0)",
+  "approved_at": "2026-09-09T21:26:50"
+ },
+ "values": {
+  "Applied For": [
+   "Graduate Scheme 2024",
+   "Marketing Exec",
+   "Product Owner",
+   "Senior Data Engineer"
+  ],
+  "Status": [
+   "Applied",
+   "Final",
+   "Phone Screen",
+   "Take-home",
+   "Technical Screen"
+  ],
+  "Source": [
+   "Agency",
+   "Careers Fair",
+   "Direct",
+   "Job Board",
+   "LinkedIn",
+   "Referral"
+  ]
+ }
+}

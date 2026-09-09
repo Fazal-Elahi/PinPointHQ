@@ -1,0 +1,266 @@
+{
+ "version": 1,
+ "model_inputs": [
+  "profile.json",
+  "vocabulary.json",
+  "target_catalog.json"
+ ],
+ "columns": [
+  {
+   "src": {
+    "index": 0,
+    "name": "Candidate Name"
+   },
+   "target": [
+    "first_name",
+    "last_name"
+   ],
+   "transform": {
+    "fn": "split_name",
+    "order": "given_first"
+   },
+   "confidence": 0.92
+  },
+  {
+   "src": {
+    "index": 1,
+    "name": "E-mail Address"
+   },
+   "target": [
+    "email"
+   ],
+   "transform": {
+    "fn": "norm_email"
+   },
+   "confidence": 0.99
+  },
+  {
+   "src": {
+    "index": 2,
+    "name": "Phone"
+   },
+   "target": [
+    "phone"
+   ],
+   "transform": {
+    "fn": "normalise_phone",
+    "default_region": "GB"
+   },
+   "confidence": 0.9
+  },
+  {
+   "src": {
+    "index": 3,
+    "name": "Applied For"
+   },
+   "target": [
+    "job_id"
+   ],
+   "transform": {
+    "fn": "map_value"
+   },
+   "value_map": {
+    "Graduate Scheme 2024": 88,
+    "Marketing Exec": 42,
+    "Product Owner": null,
+    "Senior Data Engineer": 91
+   },
+   "confidence": 0.88
+  },
+  {
+   "src": {
+    "index": 4,
+    "name": "Status"
+   },
+   "target": [
+    "stage_id"
+   ],
+   "transform": {
+    "fn": "map_value_per_job"
+   },
+   "value_map_per_job": {
+    "88": {
+     "Applied": 10,
+     "Offer": 16
+    },
+    "91": {
+     "Applied": 30,
+     "Final": 34,
+     "Take-home": 91001,
+     "Technical Screen": 32
+    },
+    "42": {
+     "Applied": 10,
+     "Offer": 16
+    }
+   },
+   "confidence": 0.85
+  },
+  {
+   "src": {
+    "index": 5,
+    "name": "Applied Date"
+   },
+   "target": [
+    "custom_attribute:original_application_date"
+   ],
+   "transform": {
+    "fn": "parse_date",
+    "locale": "en_GB",
+    "ambiguous": "prefer_dmy"
+   },
+   "confidence": 0.71
+  },
+  {
+   "src": {
+    "index": 6,
+    "name": "Address 1"
+   },
+   "target": [
+    "address1"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.99
+  },
+  {
+   "src": {
+    "index": 7,
+    "name": "Address 2"
+   },
+   "target": [
+    "address2"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.99
+  },
+  {
+   "src": {
+    "index": 8,
+    "name": "City"
+   },
+   "target": [
+    "town"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.95
+  },
+  {
+   "src": {
+    "index": 9,
+    "name": "State"
+   },
+   "target": [
+    "state_province"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.93
+  },
+  {
+   "src": {
+    "index": 10,
+    "name": "Postcode"
+   },
+   "target": [
+    "postcode"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.98
+  },
+  {
+   "src": {
+    "index": 11,
+    "name": "Country"
+   },
+   "target": [
+    "country"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.99
+  },
+  {
+   "src": {
+    "index": 12,
+    "name": "Source"
+   },
+   "target": [
+    "channel_source"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.8
+  },
+  {
+   "src": {
+    "index": 14,
+    "name": "Legacy ID"
+   },
+   "target": [
+    "_source_record_id"
+   ],
+   "transform": {
+    "fn": "trim"
+   },
+   "confidence": 0.96
+  },
+  {
+   "src": {
+    "index": 13,
+    "name": "Notes"
+   },
+   "target": [],
+   "transform": {
+    "fn": "drop"
+   },
+   "confidence": 0.6
+  },
+  {
+   "src": {
+    "index": 15,
+    "name": "Notes"
+   },
+   "target": [],
+   "transform": {
+    "fn": "drop"
+   },
+   "confidence": 0.6
+  }
+ ],
+ "routing": {
+  "retention": {
+   "cutoff": "2019-01-01",
+   "declined": false
+  },
+  "unmappable_statuses": {
+   "88": [
+    "Final",
+    "Take-home",
+    "Technical Screen",
+    "Phone Screen"
+   ],
+   "91": [
+    "Phone Screen",
+    "Offer"
+   ]
+  },
+  "requirement_waivers": {
+   "91": [
+    "resume_requirement"
+   ]
+  },
+  "rebound_to_tier2": []
+ },
+ "approved_by": "fazal"
+}

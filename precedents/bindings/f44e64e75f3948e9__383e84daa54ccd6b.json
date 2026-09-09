@@ -1,0 +1,39 @@
+{
+ "account_fingerprint": "f44e64e75f3948e9",
+ "account": "beta",
+ "semantic_signature": "383e84daa54ccd6b",
+ "job_titles": {
+  "Graduate Scheme 2024": 501,
+  "Marketing Exec": 503,
+  "Senior Data Engineer": 502
+ },
+ "status_stages": {
+  "501": {
+   "Applied": 100,
+   "Phone Screen": 102
+  },
+  "502": {
+   "Applied": 200,
+   "Final": 204,
+   "Take-home": 502001,
+   "Technical Screen": 202
+  },
+  "503": {
+   "Applied": 100,
+   "Phone Screen": 102
+  }
+ },
+ "unmappable": {
+  "501": [
+   "Final",
+   "Take-home",
+   "Technical Screen"
+  ],
+  "502": [
+   "Phone Screen"
+  ]
+ },
+ "requirement_choice": {},
+ "uses": 1,
+ "last_used": "2026-09-09T21:26:49"
+}

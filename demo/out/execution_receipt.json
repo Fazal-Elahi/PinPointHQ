@@ -1,0 +1,27 @@
+{
+ "operations": {
+  "attempted": 8,
+  "committed": 8,
+  "failed": 0,
+  "unknown": 0,
+  "recovered": 1
+ },
+ "invariants": [
+  {
+   "rule": "operations_attempted = committed + failed + unknown",
+   "pass": true
+  },
+  {
+   "rule": "operations_attempted = operations_planned",
+   "pass": true
+  },
+  {
+   "rule": "applications_created + job_seekers_created = committed",
+   "pass": true
+  },
+  {
+   "rule": "bare POST /custom_attributes never issued",
+   "pass": true
+  }
+ ]
+}

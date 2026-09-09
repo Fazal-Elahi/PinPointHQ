@@ -1,0 +1,897 @@
+{
+ "purpose": "Provenance for the reconstructed OpenAPI document. Each entry records the documentation page an OpenAPI fragment was extracted from and a SHA256 of that page as retrieved, so drift can be detected on re-fetch.",
+ "retrieved_on": "2026-09-09",
+ "sources_index": "https://developers.pinpointhq.com/llms.txt",
+ "reconstructed_document": "pinpoint-openapi.json",
+ "caveat": "A documented schema is evidence of the public contract, not proof of undocumented production behaviour. Nothing here has been validated against a live account.",
+ "entries": [
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-answer.md",
+   "source_sha256": "fe631b023a1acbcd60696f0609d4a6400493fc88b86a57775b32bd06bf63ce92",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/answers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-application.md",
+   "source_sha256": "da5b1f02bff217f29959eb9b66bb15c70e1d7533dabc9f5757e3e72180d9e00c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/applications/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-comment.md",
+   "source_sha256": "7328469c09e012e069ed0594300d54d9ec163466ecaddeab040b1ac399ffec10",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/comments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-custom-attribute.md",
+   "source_sha256": "8269c3436e737841b331f9d55e58da4824dbb013d3d44e8967b9fafda646c817",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/custom_attributes/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-custom-field.md",
+   "source_sha256": "30560203e442188404946012ef87806bd6fcea617cefa75edb8fbd358fd33ada",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/custom_fields/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-department.md",
+   "source_sha256": "6ad994888024547706c4d08488b59b7b13eed123eed1f2790c9bb75c577e2a00",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/departments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-division.md",
+   "source_sha256": "a38905320856a062c6173ba38796fbed2f73df138ca13f83b48e7fb85e3ca5ef",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/divisions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-job-seeker.md",
+   "source_sha256": "e850a194e17eca0d2e5248b6564d9439169089620478f849fb6b49c4f5d22d79",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/job_seekers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-job.md",
+   "source_sha256": "3dc1a0ff9c216a144ad6a48cbd2c5f24b2cf08b4fccb7ca8a780a063f2c66b4a",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/jobs/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-location.md",
+   "source_sha256": "d665c685a531a7b83132e4ba714c0ea454263c5b3e4cf1b95f8604bf6f187562",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/locations/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-requisition.md",
+   "source_sha256": "f6956f35e55f0c651bebd6c15765cef89e49b1496056859de33485791a80ce99",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/requisitions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-structure-custom-group-one.md",
+   "source_sha256": "038634f379518c9c21bf77a08877ab67c31d46fa935558b22786171d916fd387",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/structure_custom_group_ones/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-structure-link.md",
+   "source_sha256": "3644a5124bf98eb1ab205d7bf26a28925ab4542b983d2e0c2bf3385a8a67c0b2",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/structure_links/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-structured-section-response.md",
+   "source_sha256": "b611739cb0c3cf5e2019be870a7bcc949519223bfb8e05c9f5c3bf197d02d3cc",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/structured_section_responses/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/delete-user.md",
+   "source_sha256": "d2f97475de98dd449260a35660dd3920e172a05035310ea464e23efd64b89808",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "DELETE /api/v1/users/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-access-group.md",
+   "source_sha256": "ad57ea125a371138243ceb16eae2e4fe92eb180ca05009cc21643f69989e25ee",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/access_groups/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-access-groups.md",
+   "source_sha256": "0399895cee10a81bd129c24a327e2ffcc595880096800cf6eebf70ce93f65f31",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/access_groups"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-answer.md",
+   "source_sha256": "6ab45408fe378a0e088ab32b9633a15c67f561b8386076ee18369c2fe554718d",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/answers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-application.md",
+   "source_sha256": "67182f7f8362f9546fe13d2eb636c89e19239b45f0de6b86bf4d5ebfc5dce862",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/applications/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-applications.md",
+   "source_sha256": "19c72f98788c02f77bb64e6c17ed167db9bb84ba52cda8375534a1edb57815e7",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/applications"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-background-check.md",
+   "source_sha256": "4edef881550f466c4b2b9f978213b9ecab165003321fa655f4cc0b01b391bfa4",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/background_checks/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-background-checks.md",
+   "source_sha256": "6d7cb4eacadd47d6f32ec2bdfc8ca2bc0cfe49132d14d46c363ef3119a75c7f6",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/background_checks"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidate-assessment.md",
+   "source_sha256": "f3c1f901c072fce434c8296deb76eb08a2c2db4335978708e724049bf1e2f092",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidate_assessments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidate-assessments.md",
+   "source_sha256": "057e5309f0500adf3508135e3a03d0f7343ead4e6a84d97de5cfd728cc9a5877",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidate_assessments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidate-survey.md",
+   "source_sha256": "f9d60275053fc28099a1f4e866137d8d88fedabc1f487eca67d62087b6b8f897",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidate_surveys/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidate-surveys.md",
+   "source_sha256": "b3b05afc90505977661750e9c1c24477b7a4aff46b4dfe91bc57c0bdf83e168d",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidate_surveys"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidate.md",
+   "source_sha256": "00ea73429dacd3edbcc63c7f543e3c20abbe616647d198eaffda08e72da91133",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidates/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-candidates.md",
+   "source_sha256": "14383b992435b3463c47b5871955ddc5521ff50333c30b9187f6b6b839ee30d6",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/candidates"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-comment.md",
+   "source_sha256": "55d59bbd3a284f779758ef1ebea6f23a22ab8195b5ec3fac86eb83f22ea7bc0c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/comments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-comments.md",
+   "source_sha256": "c5d72d52928c44fc80cdfeeaf75f39a8238292d90e49da74cbd2dd94ad13a45b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/comments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-custom-attribute.md",
+   "source_sha256": "14f8d4650d48687cd5589a7a124e3da497d98664dd5093d28861c51f71d01b96",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/custom_attributes/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-custom-attributes.md",
+   "source_sha256": "9c67ef6f7937067cef9e7d80a63fbe3117e47289cca1bd383218ad9cded0adac",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/custom_attributes"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-custom-field.md",
+   "source_sha256": "73217bac751a8533fede924dcd576bb3a4feddde21c8ec4be4ad41ed5842cc6c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/custom_fields/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-custom-fields.md",
+   "source_sha256": "4fe6c0db422d1ceb38aec0baf22eebe2bc931a1fcfb04d8fa8991d298fd3b50d",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/custom_fields"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-department.md",
+   "source_sha256": "8469abdf5545539947cb802500bae9b92f46ea4c91243d6cf17644c255cdc44c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/departments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-departments.md",
+   "source_sha256": "e3418d468c87dd70ae67a4316be0351324500402041874720e93aa5b384edeca",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/departments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-division.md",
+   "source_sha256": "a804be774c6952445cf852789fdb453af11344f8e9e3ea7eb5862907ab9481c6",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/divisions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-divisions.md",
+   "source_sha256": "244a034167994f4eb4a3555755113666000d261d36cd5246c801e452ae534420",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/divisions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-equality-monitoring-categories.md",
+   "source_sha256": "0e6ed5083ec2a3c0d6bd8c4462e9702bbd08f1b294c923770994578a035c08ea",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/equality_monitoring_categories"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-equality-monitoring-category.md",
+   "source_sha256": "745cdd0c3b8a070016c8e80e7f46854459025079bbc9cef0ced4b95241db2e1b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/equality_monitoring_categories/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-hiring-workflow.md",
+   "source_sha256": "916b0c3418a06226d3d5b06b02ce7c730905da7a1dfa6f12e7a58ffaa5612dee",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/hiring_workflows/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-hiring-workflows.md",
+   "source_sha256": "d0ecbccd3c7dcce49223e3c37686d7e227512f77eac045d4bd95a1931892d166",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/hiring_workflows"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-interview.md",
+   "source_sha256": "d5bc6872b238861762b69d8505c67bc08625cfc4036f868e34b52e4efdaa8291",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/interviews/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-interviews.md",
+   "source_sha256": "feff64cdd0c68fcecd11fbfff3b10f5a3d0eb648363277b118a9b65ad0ed2131",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/interviews"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job-posting.md",
+   "source_sha256": "41f36ffabb2e5d136c1ff36a79cb221c03534af2d5c2158d80d217b59860de5d",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/job_postings/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job-postings.md",
+   "source_sha256": "758a28d7b010cfbe3b154065f46dd56b14f4e7c74ec30ba5540e1fbc7ed1066b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/job_postings"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job-seeker.md",
+   "source_sha256": "3d8a7236c966a0feef6a98dd09481529291834db8cf4e233f45030bba77e8a79",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/job_seekers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job-seekers.md",
+   "source_sha256": "769bbc8b469ab1dfe8df5bf457521132cbb1711462d1c9444f164d7a5f5903b7",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/job_seekers"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job-templates.md",
+   "source_sha256": "cd808944331cced2e69ec67d1a2b7cb9145f03ecf77f955f152db9e8581cc144",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/job_templates"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-job.md",
+   "source_sha256": "bf8044eb9976c15ca96dd49b68e29b7e6967a10f3db1d7ceff2e643436603ad0",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/jobs/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-jobs.md",
+   "source_sha256": "a18567463207cc1ee39c02222d7fb03192a373803a19feb75a1189783e8bd688",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/jobs"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-location.md",
+   "source_sha256": "2e1afa2c81cba87a220b33eedd36a44a7ee4488d372d3540aa4bc685aba12b7c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/locations/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-locations.md",
+   "source_sha256": "eac781043e9457e849354a87e065339675df04835fd55945a39feef7f9fad42c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/locations"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-onboarding-application.md",
+   "source_sha256": "da18428b4c9e91cd94d6f0d7312f25bcacfc120d0fdee09cf91f0255f3b85036",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/onboarding_applications/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-onboarding-applications.md",
+   "source_sha256": "93045ab4e55007ca05db3799a5b4a2d7d124e9488b872717dbf2f04cbb530368",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/onboarding_applications"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-one-way-video-interview.md",
+   "source_sha256": "befc50aa0cafa8fe553d522f4e31e029672cd644eb801712ae8851e42555ce54",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/one_way_video_interviews/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-one-way-video-interviews.md",
+   "source_sha256": "f2b39ea4ac49e1827049cf4e04b85d08101ab312e8e753679df0d02142eac1c4",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/one_way_video_interviews"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-position.md",
+   "source_sha256": "af1d311587b9e572f39468150766587787aea897e777f179925f285d9491b57e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/positions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-positions.md",
+   "source_sha256": "423ef5a23f180bcb1b9c9a930ac8605ddc8f81ba10bf944d861e29d5a0759442",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/positions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-questions.md",
+   "source_sha256": "317cd1f009fb9dc1b9ee3b45ea3d144da8997a929039b96af4aa339402383b6e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/questions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-reference-check.md",
+   "source_sha256": "645008af3fd63822a96e48ab9ad0ee087b83d10067917da13263f87a63471db5",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/reference_checks/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-reference-checks.md",
+   "source_sha256": "43ea147fb0f7fc638b1abef555a371f612fb14daeccc0516e0f99ef669b4ebe8",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/reference_checks"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-requisition-template.md",
+   "source_sha256": "0782a187ee9adec561d90e6502ab0023084b6ae21c2cc976084ac9bad716a00c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/requisition_templates/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-requisition-templates.md",
+   "source_sha256": "f980bcb8e7af0b9b593322a6e61213abcc3ce87e66b2295af83e23d935ae0e9e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/requisition_templates"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-requisition.md",
+   "source_sha256": "6aaf72945d760705c8de2a7b7b7e35aeaa8ecf0957db2f6e723249d3d4aeed66",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/requisitions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-requisitions.md",
+   "source_sha256": "1d1bfb70d0920d2d2d9e8e1eccf764ba5e359b3962a1389c7c150a0a024bc0d2",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/requisitions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-scorecard.md",
+   "source_sha256": "75692dfbac00e7ddf415366aa99f9efd3b411513cd84d884b4c07b737eff6e97",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/scorecards/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-scorecards.md",
+   "source_sha256": "00afe50787d9c610207a96487829415780a325ffa152cbf71694ddffd6b39e43",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/scorecards"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structure-custom-group-one.md",
+   "source_sha256": "9ed00f449fb24dbdff9b19901d0179c77623d3cbcc9f04bd4f436e0ed35d3874",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structure_custom_group_ones/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structure-custom-group-ones.md",
+   "source_sha256": "813e7862f63f9b9e5ea9a85ad940c3698b935775e0658c14cef455cf3c0613bb",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structure_custom_group_ones"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structure-link.md",
+   "source_sha256": "21d4f1d177c61a73e4df0e8dfe6084b51b78fa4bff85666f1b9012ea91901d5e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structure_links/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structure-links.md",
+   "source_sha256": "7b645574b1f589861f66475970dc66d6dc1f523c41ab14bca1432c90d95afbdd",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structure_links"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structured-section.md",
+   "source_sha256": "24b60db058bcf9651762bd05dde8261ae9334a98b86deadc3171435fbc598e06",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structured_sections/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-structured-sections.md",
+   "source_sha256": "de353f858e95679017c60b006fa702a7b1613f0c1c82f1595863d814d5acad3e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/structured_sections"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-user.md",
+   "source_sha256": "415456418615bc628d3a3f484a354b60215f3aec6f7f490941ceaf60c42ee37a",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/users/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/get-users.md",
+   "source_sha256": "6d2bfdb8974c54a614d3b402fb8c9c31a103bb66fd3ccb01ff7c525adc1f5499",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "GET /api/v1/users"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-answers.md",
+   "source_sha256": "837dd0036e4d0483789cd394cf4d3fc8009dd9b27ccc64d2cbd5aa6c870c79a2",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/answers"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-applications.md",
+   "source_sha256": "af3d49f22fb96f3c6e60111236b9a74d83c0740a569631a61daea7e60e7c968c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/applications"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-background-checks.md",
+   "source_sha256": "3e7c509b229ef5234b3c3e1faf64938e0b98108761a783f86a0308e4b431a83f",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/background_checks"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-candidate-assessments.md",
+   "source_sha256": "fcf8cef008ca08a63f4cbe4cd90ff195e3beaa2661dd46c15e4ba47a6478e721",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/candidate_assessments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-comments.md",
+   "source_sha256": "52f26249627bd0af0ab712f3fe7733b906c1fa41706356dc0f29f6b870b7a23d",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/comments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-custom-attributes.md",
+   "source_sha256": "aca1f533a91d8a25b5ae0214fe8bc6432b041d0e1b9d6c236f3210547d357987",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/custom_attributes"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-custom-fields.md",
+   "source_sha256": "253a6343c65f58c285a2e1d1bf11769c108caca3317f1dbc67a7447d20e9d6be",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/custom_fields"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-departments.md",
+   "source_sha256": "99a523ae4eb303f8fbf4b41d8e12502cb374029519879521231e5c5d3d93351b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/departments"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-divisions.md",
+   "source_sha256": "ee265af4151153c206cf01684c048d753d371846ec64d7fad68a5252c4b722f1",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/divisions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-job-seekers.md",
+   "source_sha256": "91fffee4aa163cdaef5f5158cc28432f9833d6f4c52f798740a57f0de1f3232f",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/job_seekers"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-jobs.md",
+   "source_sha256": "f71f92698dcef36f767867078189f78830c6080231deb4e4f7d77e838174a46e",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/jobs"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-locations.md",
+   "source_sha256": "e8cc4c26555f8d87410ae866c17156dd6a7ba39ae366bed4b5ecafb65cb61e37",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/locations"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-requisitions.md",
+   "source_sha256": "27d59c6bde9d673782490a1eb9670a0967e90a14c425b6bdb9e6847686b46803",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/requisitions"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-structure-custom-group-ones.md",
+   "source_sha256": "bb52dadadbf079a856b430056c5cafb2e172193f20d71aa005d71d0301642a04",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/structure_custom_group_ones"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-structure-links.md",
+   "source_sha256": "01e944346dbb4d2b69ce83c39294d305a0de5e19dcd9f0442ab0f30d9697b089",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/structure_links"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-structured-section-responses.md",
+   "source_sha256": "6328757b6fcc81dc9eb548816c806a02d5cdf7e6fa617aa1e56f7becfd1cf297",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/structured_section_responses"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/post-users.md",
+   "source_sha256": "71d6428dc0da9df5990e0f6b0bf319a4d8632b2b4fe41e0f32eb56bf7c1b124c",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "POST /api/v1/users"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-answer.md",
+   "source_sha256": "ecdf0a8563925e4006b04aa0615f345e8501d03487f025d4264b529adb938293",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/answers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-application.md",
+   "source_sha256": "2326b151a38a4291c8bcb4864789c8b394fa6c135f5d07d078d1a27aa9598006",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/applications/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-background-check.md",
+   "source_sha256": "59a23e18771628ba2e417ced1c0027870f1011cc3e72773bcb5ed933cf46c490",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/background_checks/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-candidate-assessment.md",
+   "source_sha256": "bce96600f6645db412739076fe14a16ab0f8925e3d01286231b34f1dbea26f59",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/candidate_assessments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-candidate.md",
+   "source_sha256": "79887ed4a578b24471c55b3cda1bdb8b29bde6bb3a4604db4d29ab4e483aaedb",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/candidates/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-custom-attribute.md",
+   "source_sha256": "29553f44967996ccc4e38831db5320073e7c7dcf77b094b61af85210203300c7",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/custom_attributes/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-custom-field.md",
+   "source_sha256": "cf75be777910017402291aaadb825addb26ee8316bd5a8375eccd0de5e6bdd13",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/custom_fields/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-department.md",
+   "source_sha256": "11bb7a2f5091dbd199815ab370fc87ca3c2eca29cd0d56f0b19202e3af2ebf36",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/departments/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-division.md",
+   "source_sha256": "463c55017a7c3de1bc83ac3268ad68bbef593be37431a22426c09e65f4ce2b46",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/divisions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-interview.md",
+   "source_sha256": "8dba74a1a45c45ded61b10d499cf425a7d77d6bac5f79f8da3b6133d4979ff7b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/interviews/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-job-seeker.md",
+   "source_sha256": "21cebc4afb1b0c8effa3fadf3beca9c2af2f46d4da4259ee2e156b72accefc38",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/job_seekers/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-job.md",
+   "source_sha256": "c2a904317b43a064568c760c546992bdf35642d3a1788187583683f3c53fccc5",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/jobs/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-location.md",
+   "source_sha256": "f6d181bc3cfc3a0808246672ed1fcdc10b596b4b2e0489b59156377f229f0cb0",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/locations/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-requisition.md",
+   "source_sha256": "99d65ebccdc04ad32ce81c5369fbc42b824ee8b3dbfa75a9ed8d780d703d94ee",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/requisitions/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-structure-custom-group-one.md",
+   "source_sha256": "59d02931f3f2933b6e7abc7db731dd487a8867333d6443dfac695e60509e467b",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/structure_custom_group_ones/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-structure-link.md",
+   "source_sha256": "a0bd4cf528fe4315c82f3ef0aea1c0686aa661db9e584320e67c0753f0277736",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/structure_links/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-structured-section-response.md",
+   "source_sha256": "dda0a9c7b5c3c6863187331d383f3d68c935be341f060274b93367707a406545",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/structured_section_responses/{id}"
+   ]
+  },
+  {
+   "source_url": "https://developers.pinpointhq.com/reference/put-user.md",
+   "source_sha256": "12cbe5fb8623397c2abd5d567df1164f99ac986b46869f00529b169f739690df",
+   "openapi_info_version": "v1.0.27",
+   "operations": [
+    "PUT /api/v1/users/{id}"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,138 @@
+{
+ "subdomain": "beta",
+ "hiring_workflows": [
+  {
+   "id": 10,
+   "name": "Beta Graduate",
+   "stages": [
+    {
+     "id": 100,
+     "name": "Applied",
+     "basic_type": "applied",
+     "position": 1
+    },
+    {
+     "id": 102,
+     "name": "Phone Screen",
+     "basic_type": "in_process",
+     "position": 2
+    },
+    {
+     "id": 104,
+     "name": "Onsite",
+     "basic_type": "in_process",
+     "position": 3
+    },
+    {
+     "id": 106,
+     "name": "Offer",
+     "basic_type": "offer",
+     "position": 4
+    },
+    {
+     "id": 108,
+     "name": "Hired",
+     "basic_type": "hired",
+     "position": 5
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Beta Technical",
+   "stages": [
+    {
+     "id": 200,
+     "name": "Applied",
+     "basic_type": "applied",
+     "position": 1
+    },
+    {
+     "id": 202,
+     "name": "Technical Screen",
+     "basic_type": "in_process",
+     "position": 2
+    },
+    {
+     "id": 204,
+     "name": "Final",
+     "basic_type": "in_process",
+     "position": 3
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": 501,
+   "title": "Graduate Scheme 2024",
+   "status": "open",
+   "hiring_workflow_id": 10,
+   "require_phone": false,
+   "resume_requirement": "optional",
+   "cover_letter_requirement": "optional",
+   "ask_for_address": true,
+   "ask_for_date_of_birth": false,
+   "job_owned_stages": []
+  },
+  {
+   "id": 502,
+   "title": "Senior Data Engineer",
+   "status": "open",
+   "hiring_workflow_id": 11,
+   "require_phone": false,
+   "resume_requirement": "optional",
+   "cover_letter_requirement": "optional",
+   "ask_for_address": false,
+   "ask_for_date_of_birth": false,
+   "job_owned_stages": [
+    {
+     "id": 502001,
+     "name": "Take-home",
+     "basic_type": "in_process",
+     "position": 4
+    }
+   ]
+  },
+  {
+   "id": 503,
+   "title": "Marketing Exec",
+   "status": "archived",
+   "hiring_workflow_id": 10,
+   "require_phone": false,
+   "resume_requirement": "optional",
+   "cover_letter_requirement": "optional",
+   "ask_for_address": true,
+   "ask_for_date_of_birth": false,
+   "job_owned_stages": []
+  }
+ ],
+ "custom_fields": [
+  {
+   "id": 701,
+   "name": "Original Application Date",
+   "field_type": "date",
+   "resource_type": "applications",
+   "unique_reference": "orig_app_date_app"
+  },
+  {
+   "id": 702,
+   "name": "Original Application Date",
+   "field_type": "date",
+   "resource_type": "job_seekers",
+   "unique_reference": "orig_app_date_js"
+  }
+ ],
+ "candidates": [
+  {
+   "id": 7001,
+   "first_name": "Ada",
+   "last_name": "Lovelace",
+   "email": "ada@example.com",
+   "phone": "+447700900001",
+   "external_system_reference": null
+  }
+ ],
+ "applications": [],
+ "job_seekers": []
+}

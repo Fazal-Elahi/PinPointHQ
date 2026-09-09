@@ -1,0 +1,5 @@
+row,external_system_reference,candidate_id,job_id,stage_id,first_name,last_name,email,phone,address1,address2,town,state_province,postcode,country,original_application_date,import_order,depends_on_row
+2,PPM-16d4cb85974c4ab3a683c2be,9001,88,10,Grace,Hopper,grace@example.com,+447700900002,3 Navy Rd,,Bristol,,BS1 4ST,GB,2024-06-05,2,
+4,PPM-26accd6698ba97ffc0ae3b01,,91,91001,Katherine,Johnson,kj@example.com,+15550101,5 Orbit Ave,,Hampton,VA,23666,US,2019-03-04,3,
+9,PPM-d816a5b7a8ba0af5dd5fd81f,,88,10,Frances,Allen,fa@example.com,+447700900009,8 Optimiser Rd,,Manchester,,M1 3EJ,GB,2024-11-11,7,
+12,PPM-bc763e51a11e6e1a75b6a3ce,,88,10,Ada,Lovelace,ada@example.com,+447700900001,12 Bell St,,London,,NW1 6TB,GB,2025-08-20,8,1

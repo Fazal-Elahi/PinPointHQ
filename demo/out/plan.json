@@ -1,0 +1,96 @@
+{
+ "tier1": [
+  2,
+  4,
+  9,
+  12
+ ],
+ "tier2": [
+  1,
+  5,
+  6,
+  7
+ ],
+ "operations": [
+  {
+   "row": 1,
+   "entity": "job_seekers",
+   "esr": "PPM-722e3dad8cb64fd2a17c1364",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 2,
+   "entity": "applications",
+   "esr": "PPM-16d4cb85974c4ab3a683c2be",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 4,
+   "entity": "applications",
+   "esr": "PPM-26accd6698ba97ffc0ae3b01",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 5,
+   "entity": "job_seekers",
+   "esr": "PPM-fa6d739a0a796058f0112cb3",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 6,
+   "entity": "job_seekers",
+   "esr": "PPM-3a9c6bceba12714ac8e102e1",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 7,
+   "entity": "job_seekers",
+   "esr": "PPM-dec35bf156ffac7bded31087",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 9,
+   "entity": "applications",
+   "esr": "PPM-d816a5b7a8ba0af5dd5fd81f",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": null,
+   "state": "planned"
+  },
+  {
+   "row": 12,
+   "entity": "applications",
+   "esr": "PPM-bc763e51a11e6e1a75b6a3ce",
+   "nested": [
+    "custom_attributes"
+   ],
+   "depends_on_row": 1,
+   "state": "planned"
+  }
+ ]
+}

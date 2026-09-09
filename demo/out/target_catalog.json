@@ -1,0 +1,140 @@
+{
+ "account_fingerprint": "822b33ad87c148a0",
+ "jobs": [
+  {
+   "id": 88,
+   "title": "Graduate Scheme 2024",
+   "status": "open",
+   "accepts_applications": true,
+   "requirements": {
+    "require_phone": true,
+    "resume_requirement": "optional",
+    "cover_letter_requirement": "optional",
+    "ask_for_address": true
+   },
+   "stages": [
+    {
+     "id": 10,
+     "name": "Applied",
+     "owner": "workflow"
+    },
+    {
+     "id": 14,
+     "name": "Onsite",
+     "owner": "workflow"
+    },
+    {
+     "id": 16,
+     "name": "Offer",
+     "owner": "workflow"
+    },
+    {
+     "id": 18,
+     "name": "Hired",
+     "owner": "workflow"
+    },
+    {
+     "id": 20,
+     "name": "Rejected",
+     "owner": "workflow"
+    }
+   ]
+  },
+  {
+   "id": 91,
+   "title": "Senior Data Engineer",
+   "status": "open",
+   "accepts_applications": true,
+   "requirements": {
+    "require_phone": false,
+    "resume_requirement": "required",
+    "cover_letter_requirement": "optional",
+    "ask_for_address": false
+   },
+   "stages": [
+    {
+     "id": 30,
+     "name": "Applied",
+     "owner": "workflow"
+    },
+    {
+     "id": 32,
+     "name": "Technical Screen",
+     "owner": "workflow"
+    },
+    {
+     "id": 34,
+     "name": "Final",
+     "owner": "workflow"
+    },
+    {
+     "id": 91001,
+     "name": "Take-home",
+     "owner": "job"
+    }
+   ]
+  },
+  {
+   "id": 42,
+   "title": "Marketing Exec",
+   "status": "archived",
+   "accepts_applications": false,
+   "requirements": {
+    "require_phone": false,
+    "resume_requirement": "optional",
+    "cover_letter_requirement": "optional",
+    "ask_for_address": false
+   },
+   "stages": [
+    {
+     "id": 10,
+     "name": "Applied",
+     "owner": "workflow"
+    },
+    {
+     "id": 14,
+     "name": "Onsite",
+     "owner": "workflow"
+    },
+    {
+     "id": 16,
+     "name": "Offer",
+     "owner": "workflow"
+    },
+    {
+     "id": 18,
+     "name": "Hired",
+     "owner": "workflow"
+    },
+    {
+     "id": 20,
+     "name": "Rejected",
+     "owner": "workflow"
+    }
+   ]
+  }
+ ],
+ "custom_fields": [
+  {
+   "id": 501,
+   "name": "Original Application Date",
+   "field_type": "date",
+   "resource_type": "applications",
+   "unique_reference": "orig_app_date_app"
+  },
+  {
+   "id": 502,
+   "name": "Original Application Date",
+   "field_type": "date",
+   "resource_type": "job_seekers",
+   "unique_reference": "orig_app_date_js"
+  },
+  {
+   "id": 503,
+   "name": "Legacy Source System",
+   "field_type": "varchar",
+   "resource_type": "job_seekers",
+   "unique_reference": "legacy_src"
+  }
+ ]
+}

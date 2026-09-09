@@ -1,0 +1,17 @@
+{
+ "counts": {
+  "ok": 11,
+  "fail": 2,
+  "excluded": 1
+ },
+ "errors_by_code": {
+  "ADDRESS2_ON_US": 1,
+  "MISSING_REQUIRED_PHONE": 1,
+  "BEFORE_RETENTION_CUTOFF": 1
+ },
+ "tiers": {
+  "2": 5,
+  "1": 8,
+  "None": 1
+ }
+}

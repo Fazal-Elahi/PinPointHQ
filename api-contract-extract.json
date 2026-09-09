@@ -1,0 +1,880 @@
+{
+  "purpose": "Planning extract for a synthetic Pinpoint simulation; not a full OpenAPI schema or a claim of live validation. Mutation entries include general response relationships; those relationships are not a writable relationship allowlist.",
+  "retrieved_on": "2026-09-09",
+  "sources_index": "https://developers.pinpointhq.com/llms.txt",
+  "entries": [
+    {
+      "resource": "candidates",
+      "source_url": "https://developers.pinpointhq.com/reference/get-candidates.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "14383b992435b3463c47b5871955ddc5521ff50333c30b9187f6b6b839ee30d6",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/api/v1/candidates",
+          "query_parameters": [
+            "extra_fields[candidates]",
+            "include",
+            "fields[candidates]",
+            "fields[applications]",
+            "fields[hris_exports]",
+            "fields[job_seekers]",
+            "fields[skills]",
+            "fields[custom_attributes]",
+            "filter[created_at][gt]",
+            "filter[created_at][lt]",
+            "filter[updated_at][gt]",
+            "filter[updated_at][lt]",
+            "filter[external_system_reference]",
+            "filter[blocked]",
+            "filter[phone]",
+            "sort",
+            "page[number]",
+            "page[size]",
+            "stats[total]"
+          ],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "applications": {
+          "cardinality": "many",
+          "target_types": [
+            "applications"
+          ]
+        },
+        "hris_references": {
+          "cardinality": "many",
+          "target_types": [
+            "hris_exports"
+          ]
+        },
+        "job_seekers": {
+          "cardinality": "many",
+          "target_types": [
+            "job_seekers"
+          ]
+        },
+        "skills": {
+          "cardinality": "many",
+          "target_types": [
+            "skills"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "resource": "applications",
+      "source_url": "https://developers.pinpointhq.com/reference/get-applications.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "19c72f98788c02f77bb64e6c17ed167db9bb84ba52cda8375534a1edb57815e7",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/api/v1/applications",
+          "query_parameters": [
+            "extra_fields[applications]",
+            "include",
+            "fields[applications]",
+            "fields[jobs]",
+            "fields[job_postings]",
+            "fields[stages]",
+            "fields[candidates]",
+            "fields[hris_exports]",
+            "fields[onboarding_applications]",
+            "fields[document_requests]",
+            "fields[offers]",
+            "fields[answers]",
+            "fields[custom_attributes]",
+            "fields[structured_section_responses]",
+            "fields[scorecard_ratings]",
+            "fields[scorecard_notes]",
+            "fields[scorecard_answers]",
+            "fields[user_scorecards]",
+            "fields[comments]",
+            "filter[uuid]",
+            "filter[created_at][gt]",
+            "filter[created_at][lt]",
+            "filter[updated_at][gt]",
+            "filter[updated_at][lt]",
+            "filter[candidate_id]",
+            "filter[external_system_reference]",
+            "filter[internal_candidate]",
+            "filter[job_id]",
+            "filter[job_posting_id]",
+            "filter[locale]",
+            "filter[stage_id]",
+            "filter[stage_basic_type]",
+            "filter[candidate_email]",
+            "filter[candidate_phone]",
+            "filter[job_visibility]",
+            "filter[concealed]",
+            "sort",
+            "page[number]",
+            "page[size]",
+            "stats[total]"
+          ],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "job": {
+          "cardinality": "one",
+          "target_types": [
+            "jobs"
+          ]
+        },
+        "job_posting": {
+          "cardinality": "one",
+          "target_types": [
+            "job_postings"
+          ]
+        },
+        "stage": {
+          "cardinality": "one",
+          "target_types": [
+            "stages"
+          ]
+        },
+        "furthest_stage": {
+          "cardinality": "one",
+          "target_types": [
+            "stages"
+          ]
+        },
+        "candidate": {
+          "cardinality": "one",
+          "target_types": [
+            "candidates"
+          ]
+        },
+        "hris_reference": {
+          "cardinality": "one",
+          "target_types": [
+            "hris_exports"
+          ]
+        },
+        "onboarding_application": {
+          "cardinality": "one",
+          "target_types": [
+            "onboarding_applications"
+          ]
+        },
+        "document_requests": {
+          "cardinality": "many",
+          "target_types": [
+            "document_requests"
+          ]
+        },
+        "offers": {
+          "cardinality": "many",
+          "target_types": [
+            "offers"
+          ]
+        },
+        "answers": {
+          "cardinality": "many",
+          "target_types": [
+            "answers"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        },
+        "structured_section_responses": {
+          "cardinality": "many",
+          "target_types": [
+            "structured_section_responses"
+          ]
+        },
+        "scorecard_ratings": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_ratings"
+          ]
+        },
+        "scorecard_notes": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_notes"
+          ]
+        },
+        "scorecard_answers": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_answers"
+          ]
+        },
+        "user_scorecards": {
+          "cardinality": "many",
+          "target_types": [
+            "user_scorecards"
+          ]
+        },
+        "comments": {
+          "cardinality": "many",
+          "target_types": [
+            "comments"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "add_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "writeOnly": true
+        },
+        "add_tags_with_context": {
+          "type": "array",
+          "items": {},
+          "description": "Add multiple **tags** at once\nExample: `[{\"tag\": \"Celery\", \"context\": \"custom_green\"}, {\"tag\": \"Availability\", \"context\": \"rejection\"}]`",
+          "writeOnly": true
+        },
+        "remove_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "writeOnly": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "A list of tags assigned to the application.\nExample: `[{\"context\": \"custom_green\", \"name\": \"Celery\"}, {\"context\": \"rejection\", \"name\": \"Availability\"}]`\n. This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "resource": "job_seekers",
+      "source_url": "https://developers.pinpointhq.com/reference/get-job-seekers.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "769bbc8b469ab1dfe8df5bf457521132cbb1711462d1c9444f164d7a5f5903b7",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/api/v1/job_seekers",
+          "query_parameters": [
+            "extra_fields[job_seekers]",
+            "include",
+            "fields[job_seekers]",
+            "fields[answers]",
+            "fields[candidates]",
+            "fields[comments]",
+            "fields[custom_attributes]",
+            "fields[structured_section_responses]",
+            "fields[user_scorecards]",
+            "filter[candidate_id]",
+            "filter[created_at][gt]",
+            "filter[created_at][lt]",
+            "filter[updated_at][gt]",
+            "filter[updated_at][lt]",
+            "filter[external_system_reference]",
+            "filter[search]",
+            "sort",
+            "page[number]",
+            "page[size]",
+            "stats[total]"
+          ],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "answers": {
+          "cardinality": "many",
+          "target_types": [
+            "answers"
+          ]
+        },
+        "candidate": {
+          "cardinality": "one",
+          "target_types": [
+            "candidates"
+          ]
+        },
+        "comments": {
+          "cardinality": "many",
+          "target_types": [
+            "comments"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        },
+        "structured_section_responses": {
+          "cardinality": "many",
+          "target_types": [
+            "structured_section_responses"
+          ]
+        },
+        "user_scorecards": {
+          "cardinality": "many",
+          "target_types": [
+            "user_scorecards"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "add_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Add a single **tag**\nExample: `{\"tag\": \"Celery\", \"context\": \"custom_green\"}`",
+          "writeOnly": true
+        },
+        "add_tags_with_context": {
+          "type": "array",
+          "items": {},
+          "description": "Add multiple **tags** at once\nExample: `[{\"tag\": \"Celery\", \"context\": \"custom_green\"}, {\"tag\": \"Availability\", \"context\": \"rejection\"}]`",
+          "writeOnly": true
+        },
+        "remove_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Remove a single **tag**\nExample: `{\"tag\": \"Celery\", \"context\": \"custom_green\"}`",
+          "writeOnly": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "resource": "jobs",
+      "source_url": "https://developers.pinpointhq.com/reference/get-jobs.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "a18567463207cc1ee39c02222d7fb03192a373803a19feb75a1189783e8bd688",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/api/v1/jobs",
+          "query_parameters": [
+            "extra_fields[jobs]",
+            "include",
+            "fields[jobs]",
+            "fields[departments]",
+            "fields[divisions]",
+            "fields[locations]",
+            "fields[structure_custom_group_ones]",
+            "fields[companies]",
+            "fields[structure_links]",
+            "fields[users]",
+            "fields[applications]",
+            "fields[job_postings]",
+            "fields[questions]",
+            "fields[custom_attributes]",
+            "fields[stages]",
+            "filter[uuid]",
+            "filter[created_at][gt]",
+            "filter[created_at][lt]",
+            "filter[updated_at][gt]",
+            "filter[updated_at][lt]",
+            "filter[external_system_reference]",
+            "filter[requisition_id]",
+            "filter[employment_type]",
+            "filter[workplace_type]",
+            "filter[visibility]",
+            "filter[status]",
+            "filter[remote]",
+            "filter[department_id]",
+            "filter[department_name]",
+            "filter[division_id]",
+            "filter[division_name]",
+            "filter[location_id]",
+            "filter[location_name]",
+            "filter[structure_custom_group_one_id]",
+            "filter[structure_custom_group_one_name]",
+            "filter[search]",
+            "filter[non_rejected_applications]",
+            "filter[hiring_manager_user_id]",
+            "filter[recruitment_manager_user_id]",
+            "sort",
+            "page[number]",
+            "page[size]",
+            "stats[total]"
+          ],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "department": {
+          "cardinality": "one",
+          "target_types": [
+            "departments"
+          ]
+        },
+        "division": {
+          "cardinality": "one",
+          "target_types": [
+            "divisions"
+          ]
+        },
+        "location": {
+          "cardinality": "one",
+          "target_types": [
+            "locations"
+          ]
+        },
+        "structure_custom_group_one": {
+          "cardinality": "one",
+          "target_types": [
+            "structure_custom_group_ones"
+          ]
+        },
+        "company": {
+          "cardinality": "one",
+          "target_types": [
+            "companies"
+          ]
+        },
+        "structure_link": {
+          "cardinality": "one",
+          "target_types": [
+            "structure_links"
+          ]
+        },
+        "hiring_manager_user": {
+          "cardinality": "one",
+          "target_types": [
+            "users"
+          ]
+        },
+        "recruitment_manager_user": {
+          "cardinality": "one",
+          "target_types": [
+            "users"
+          ]
+        },
+        "creator_user": {
+          "cardinality": "one",
+          "target_types": [
+            "users"
+          ]
+        },
+        "applications": {
+          "cardinality": "many",
+          "target_types": [
+            "applications"
+          ]
+        },
+        "job_postings": {
+          "cardinality": "many",
+          "target_types": [
+            "job_postings"
+          ]
+        },
+        "questions": {
+          "cardinality": "many",
+          "target_types": [
+            "questions"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        },
+        "stages": {
+          "cardinality": "many",
+          "target_types": [
+            "stages"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {}
+    },
+    {
+      "resource": "hiring_workflows",
+      "source_url": "https://developers.pinpointhq.com/reference/get-hiring-workflow.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "916b0c3418a06226d3d5b06b02ce7c730905da7a1dfa6f12e7a58ffaa5612dee",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "GET",
+          "path": "/api/v1/hiring_workflows/{id}",
+          "query_parameters": [
+            "include",
+            "fields[hiring_workflows]",
+            "fields[stages]"
+          ],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "stages": {
+          "cardinality": "many",
+          "target_types": [
+            "stages"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {}
+    },
+    {
+      "resource": "candidates",
+      "source_url": "https://developers.pinpointhq.com/reference/put-candidate.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "79887ed4a578b24471c55b3cda1bdb8b29bde6bb3a4604db4d29ab4e483aaedb",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/candidates/{id}",
+          "query_parameters": [],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "422",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "applications": {
+          "cardinality": "many",
+          "target_types": [
+            "applications"
+          ]
+        },
+        "hris_references": {
+          "cardinality": "many",
+          "target_types": [
+            "hris_exports"
+          ]
+        },
+        "job_seekers": {
+          "cardinality": "many",
+          "target_types": [
+            "job_seekers"
+          ]
+        },
+        "skills": {
+          "cardinality": "many",
+          "target_types": [
+            "skills"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "resource": "applications",
+      "source_url": "https://developers.pinpointhq.com/reference/put-application.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "2326b151a38a4291c8bcb4864789c8b394fa6c135f5d07d078d1a27aa9598006",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/applications/{id}",
+          "query_parameters": [],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "422",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "job": {
+          "cardinality": "one",
+          "target_types": [
+            "jobs"
+          ]
+        },
+        "job_posting": {
+          "cardinality": "one",
+          "target_types": [
+            "job_postings"
+          ]
+        },
+        "stage": {
+          "cardinality": "one",
+          "target_types": [
+            "stages"
+          ]
+        },
+        "furthest_stage": {
+          "cardinality": "one",
+          "target_types": [
+            "stages"
+          ]
+        },
+        "candidate": {
+          "cardinality": "one",
+          "target_types": [
+            "candidates"
+          ]
+        },
+        "hris_reference": {
+          "cardinality": "one",
+          "target_types": [
+            "hris_exports"
+          ]
+        },
+        "onboarding_application": {
+          "cardinality": "one",
+          "target_types": [
+            "onboarding_applications"
+          ]
+        },
+        "document_requests": {
+          "cardinality": "many",
+          "target_types": [
+            "document_requests"
+          ]
+        },
+        "offers": {
+          "cardinality": "many",
+          "target_types": [
+            "offers"
+          ]
+        },
+        "answers": {
+          "cardinality": "many",
+          "target_types": [
+            "answers"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        },
+        "structured_section_responses": {
+          "cardinality": "many",
+          "target_types": [
+            "structured_section_responses"
+          ]
+        },
+        "scorecard_ratings": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_ratings"
+          ]
+        },
+        "scorecard_notes": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_notes"
+          ]
+        },
+        "scorecard_answers": {
+          "cardinality": "many",
+          "target_types": [
+            "scorecard_answers"
+          ]
+        },
+        "user_scorecards": {
+          "cardinality": "many",
+          "target_types": [
+            "user_scorecards"
+          ]
+        },
+        "comments": {
+          "cardinality": "many",
+          "target_types": [
+            "comments"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "add_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "writeOnly": true
+        },
+        "add_tags_with_context": {
+          "type": "array",
+          "items": {},
+          "description": "Add multiple **tags** at once\nExample: `[{\"tag\": \"Celery\", \"context\": \"custom_green\"}, {\"tag\": \"Availability\", \"context\": \"rejection\"}]`",
+          "writeOnly": true
+        },
+        "remove_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "writeOnly": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "A list of tags assigned to the application.\nExample: `[{\"context\": \"custom_green\", \"name\": \"Celery\"}, {\"context\": \"rejection\", \"name\": \"Availability\"}]`\n. This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    },
+    {
+      "resource": "job_seekers",
+      "source_url": "https://developers.pinpointhq.com/reference/put-job-seeker.md",
+      "retrieved_on": "2026-09-09",
+      "source_sha256": "21cebc4afb1b0c8effa3fadf3beca9c2af2f46d4da4259ee2e156b72accefc38",
+      "openapi_info_version": "v1.0.27",
+      "operations": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/job_seekers/{id}",
+          "query_parameters": [],
+          "documented_status_codes": [
+            "200",
+            "400",
+            "401",
+            "403",
+            "404",
+            "422",
+            "429",
+            "500"
+          ]
+        }
+      ],
+      "response_relationships": {
+        "answers": {
+          "cardinality": "many",
+          "target_types": [
+            "answers"
+          ]
+        },
+        "candidate": {
+          "cardinality": "one",
+          "target_types": [
+            "candidates"
+          ]
+        },
+        "comments": {
+          "cardinality": "many",
+          "target_types": [
+            "comments"
+          ]
+        },
+        "custom_attributes": {
+          "cardinality": "many",
+          "target_types": [
+            "custom_attributes"
+          ]
+        },
+        "structured_section_responses": {
+          "cardinality": "many",
+          "target_types": [
+            "structured_section_responses"
+          ]
+        },
+        "user_scorecards": {
+          "cardinality": "many",
+          "target_types": [
+            "user_scorecards"
+          ]
+        }
+      },
+      "tag_attribute_metadata": {
+        "add_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Add a single **tag**\nExample: `{\"tag\": \"Celery\", \"context\": \"custom_green\"}`",
+          "writeOnly": true
+        },
+        "add_tags_with_context": {
+          "type": "array",
+          "items": {},
+          "description": "Add multiple **tags** at once\nExample: `[{\"tag\": \"Celery\", \"context\": \"custom_green\"}, {\"tag\": \"Availability\", \"context\": \"rejection\"}]`",
+          "writeOnly": true
+        },
+        "remove_tag_with_context": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Remove a single **tag**\nExample: `{\"tag\": \"Celery\", \"context\": \"custom_green\"}`",
+          "writeOnly": true
+        },
+        "tags": {
+          "type": "array",
+          "items": {},
+          "description": "This is an extra attribute. If you want it to be returned please add `extra_fields` query param (see Query Params section)",
+          "readOnly": true
+        }
+      }
+    }
+  ]
+}

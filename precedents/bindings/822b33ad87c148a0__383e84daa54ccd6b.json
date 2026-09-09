@@ -1,0 +1,41 @@
+{
+ "account_fingerprint": "822b33ad87c148a0",
+ "account": "acme",
+ "semantic_signature": "383e84daa54ccd6b",
+ "job_titles": {
+  "Graduate Scheme 2024": 88,
+  "Marketing Exec": 42,
+  "Senior Data Engineer": 91
+ },
+ "status_stages": {
+  "88": {
+   "Applied": 10
+  },
+  "91": {
+   "Applied": 30,
+   "Final": 34,
+   "Take-home": 91001,
+   "Technical Screen": 32
+  },
+  "42": {
+   "Applied": 10
+  }
+ },
+ "unmappable": {
+  "88": [
+   "Final",
+   "Take-home",
+   "Technical Screen",
+   "Phone Screen"
+  ],
+  "91": [
+   "Phone Screen",
+   "Offer"
+  ]
+ },
+ "requirement_choice": {
+  "91": "w"
+ },
+ "uses": 3,
+ "last_used": "2026-09-09T21:26:50"
+}

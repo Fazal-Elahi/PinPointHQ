@@ -1,0 +1,34 @@
+{
+ "signature": "383e84daa54ccd6b",
+ "source_headers": [
+  "Candidate Name",
+  "E-mail Address",
+  "Phone",
+  "Applied For",
+  "Status",
+  "Applied Date",
+  "Address 1",
+  "Address 2",
+  "City",
+  "State",
+  "Postcode",
+  "Country",
+  "Source",
+  "Notes",
+  "Legacy ID",
+  "Notes"
+ ],
+ "transforms": {
+  "name_order": "given_first",
+  "date_locale": "en_GB",
+  "phone_region": "GB"
+ },
+ "gate0_columns": [
+  3,
+  4,
+  12
+ ],
+ "last_account": "acme",
+ "uses": 4,
+ "last_used": "2026-09-09T21:26:50"
+}
