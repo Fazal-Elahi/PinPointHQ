@@ -4,6 +4,12 @@ A runnable vertical slice of an AI-assisted ATS migration tool. It walks a messy
 applicant export into a Pinpoint account through **seven stages, three human gates and a signed
 approval**, and produces a migration workbook a human can import and sign for.
 
+## Watch the full workflow
+
+<video src="https://github.com/Fazal-Elahi/PinPointHQ/raw/main/PinPoint-Demo.mp4" controls muted playsinline width="100%"></video>
+
+▶ **[Watch the demo](https://github.com/Fazal-Elahi/PinPointHQ/raw/main/PinPoint-Demo.mp4)** — 24 minutes, one complete run: a messy 14-row CSV through all three gates to a signed workbook. *(If the player above doesn't load in your browser, use this link.)*
+
 > **The one line that explains the design:** software does the reading, checking and counting;
 > a human makes every decision that could be wrong in a way that matters.
 >
@@ -82,23 +88,23 @@ On Windows the interpreter lives at `.venv\Scripts\python.exe`, so use
 flowchart TD
     CSV[/"Messy ATS export<br/>14 rows, 16 columns"/]:::src
 
-    S0["**§7.0 Profile**<br/>shape only — zero cell values"]:::script
-    G0{{"**GATE 0** · HUMAN<br/>Which columns may the AI see?"}}:::gate
-    S2["**§7.2 Discover target**<br/>jobs · per-job stages · requirements"]:::script
-    S3["**§7.3 Propose mapping**<br/>AI · closed transform list"]:::llm
-    G1{{"**GATE 1** · HUMAN<br/>Coverage · Requirements · Retention"}}:::gate
-    S5["**§7.5 Validate**<br/>ok / fail / excluded — no writes"]:::script
-    S6["**§7.6 Identity**<br/>3 keys, exact matches only"]:::script
-    S7["**§7.7 Collapse people**<br/>catch the same human twice"]:::script
-    G2{{"**GATE 2** · HUMAN<br/>Sign it — 4 hashes"}}:::gate
-    WB["**§7.9 Workbook**<br/>9 files, 5 invariants"]:::out
+    S0["§7.0 Profile<br/>shape only — zero cell values"]:::script
+    G0{{"GATE 0 · HUMAN<br/>Which columns may the AI see?"}}:::gate
+    S2["§7.2 Discover target<br/>jobs · per-job stages · requirements"]:::script
+    S3["§7.3 Propose mapping<br/>AI · closed transform list"]:::llm
+    G1{{"GATE 1 · HUMAN<br/>Coverage · Requirements · Retention"}}:::gate
+    S5["§7.5 Validate<br/>ok / fail / excluded — no writes"]:::script
+    S6["§7.6 Identity<br/>3 keys, exact matches only"]:::script
+    S7["§7.7 Collapse people<br/>catch the same human twice"]:::script
+    G2{{"GATE 2 · HUMAN<br/>Sign it — 4 hashes"}}:::gate
+    WB["§7.9 Workbook<br/>9 files, 5 invariants"]:::out
 
-    T1[/"tier1_applications.csv<br/>**5 rows**"/]:::out
-    T2[/"tier2_job_seekers.csv<br/>**3 rows**"/]:::out
-    EX[/"exceptions.csv<br/>**5 rows** — needs a person"/]:::warn
-    XC[/"excluded.csv<br/>**1 row** — retention"/]:::warn
+    T1[/"tier1_applications.csv<br/>5 rows"/]:::out
+    T2[/"tier2_job_seekers.csv<br/>3 rows"/]:::out
+    EX[/"exceptions.csv<br/>5 rows — needs a person"/]:::warn
+    XC[/"excluded.csv<br/>1 row — retention"/]:::warn
 
-    OPT["**§12 Optional last mile**<br/>only if the importer can't<br/>carry stages + dates"]:::opt
+    OPT["§12 Optional last mile<br/>only if the importer can't<br/>carry stages + dates"]:::opt
 
     CSV --> S0 --> G0 --> S2 --> S3 --> G1 --> S5 --> S6 --> S7 --> G2 --> WB
     WB --> T1 & T2 & EX & XC
@@ -117,9 +123,9 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    G1["GATE 1"]:::gate --> A["**a · Coverage**<br/>every status mapped<br/>or declared unmappable"]:::q
-    G1 --> B["**b · Requirements**<br/>can the source supply<br/>what the job demands?"]:::q
-    G1 --> C["**c · Retention**<br/>how far back<br/>do we go?"]:::q
+    G1["GATE 1"]:::gate --> A["a · Coverage<br/>every status mapped<br/>or declared unmappable"]:::q
+    G1 --> B["b · Requirements<br/>can the source supply<br/>what the job demands?"]:::q
+    G1 --> C["c · Retention<br/>how far back<br/>do we go?"]:::q
     A --> A2["4 gaps<br/>→ you decide each"]:::a
     B --> B2["job 91 wants a CV<br/>source has no CV column<br/>→ waive or reroute"]:::a
     C --> C2["cutoff 2019-01-01<br/>→ 1 row excluded"]:::a
@@ -135,8 +141,8 @@ flowchart LR
     R[validated row] --> Q1{past retention<br/>cutoff?}
     Q1 -->|yes| X[excluded<br/>not a tier]:::warn
     Q1 -->|no| Q2{live job<br/>+ status maps<br/>to its stage?}
-    Q2 -->|yes| T1["**TIER 1**<br/>applications + stage"]:::t1
-    Q2 -->|no| T2["**TIER 2**<br/>job_seekers + tag"]:::t2
+    Q2 -->|yes| T1["TIER 1<br/>applications + stage"]:::t1
+    Q2 -->|no| T2["TIER 2<br/>job_seekers + tag"]:::t2
     classDef t1 fill:#e2efee,stroke:#14615e,color:#0d3d3b,font-weight:bold
     classDef t2 fill:#eef2f5,stroke:#4a6b8a,color:#1c3348,font-weight:bold
     classDef warn fill:#f6e5e5,stroke:#9c3535,color:#5e1f1f
@@ -146,15 +152,15 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    R1["**Run 1** · Acme<br/>you decide everything"]:::run
-    R1 --> SEM[("**semantic/**<br/>transforms · date locale<br/>phone region<br/>*PORTABLE*")]:::sem
-    R1 --> BND[("**bindings/**<br/>Phone Screen → stage 12<br/>*ACCOUNT-SCOPED*")]:::bnd
-    SEM --> R2["**Run 2** · Acme, new file<br/>5 asks → 1"]:::run
+    R1["Run 1 · Acme<br/>you decide everything"]:::run
+    R1 --> SEM[("semantic/<br/>transforms · date locale<br/>phone region<br/>PORTABLE")]:::sem
+    R1 --> BND[("bindings/<br/>Phone Screen → stage 12<br/>ACCOUNT-SCOPED")]:::bnd
+    SEM --> R2["Run 2 · Acme, new file<br/>5 asks → 1"]:::run
     BND --> R2
-    SEM --> R3["**Run 3** · Beta<br/>transforms carry<br/>value maps do NOT"]:::run
+    SEM --> R3["Run 3 · Beta<br/>transforms carry<br/>value maps do NOT"]:::run
     BND -.->|"blocked by design"| R3
-    BND --> R4["**Run 4** · stage deleted<br/>binding invalidated<br/>re-asked, not repaired"]:::run
-    RET["retention — stored in **neither**<br/>asked every single run"]:::ret
+    BND --> R4["Run 4 · stage deleted<br/>binding invalidated<br/>re-asked, not repaired"]:::run
+    RET["retention — stored in neither<br/>asked every single run"]:::ret
     classDef run fill:#e2efee,stroke:#14615e,color:#0d3d3b
     classDef sem fill:#efe6f5,stroke:#6b3f92,color:#3f2456
     classDef bnd fill:#f7ebd9,stroke:#9a5b14,color:#5c360c

@@ -5,3 +5,6 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# Source video masters (the compressed .mp4 is committed instead)
+*.mov
