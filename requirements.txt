@@ -1,0 +1,13 @@
+# Pinpoint Migration Copilot — runtime dependencies
+#
+# The demo is deliberately close to the standard library. jsonschema is the only
+# direct dependency: every write payload is validated against
+# openapi/milestone-1-slice.json before it is sent to the mock.
+#
+#   python3 -m venv .venv
+#   .venv/bin/pip install -r requirements.txt
+#
+# Transitive deps (installed automatically): attrs, jsonschema-specifications,
+# referencing, rpds-py, typing_extensions.
+
+jsonschema==4.25.1
