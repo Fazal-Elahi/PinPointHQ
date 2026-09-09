@@ -6,9 +6,9 @@ approval**, and produces a migration workbook a human can import and sign for.
 
 ## Watch the full workflow
 
-<video src="https://github.com/Fazal-Elahi/PinPointHQ/raw/main/PinPoint-Demo.mp4" controls muted playsinline width="100%"></video>
+[![Watch the full demo](demo-poster.png)](https://github.com/Fazal-Elahi/PinPointHQ/blob/main/PinPoint-Demo.mp4)
 
-▶ **[Watch the demo](https://github.com/Fazal-Elahi/PinPointHQ/raw/main/PinPoint-Demo.mp4)** — 24 minutes, one complete run: a messy 14-row CSV through all three gates to a signed workbook. *(If the player above doesn't load in your browser, use this link.)*
+**[▶ Watch the full demo](https://github.com/Fazal-Elahi/PinPointHQ/blob/main/PinPoint-Demo.mp4)** — 24 minutes, one complete run: a messy 14-row CSV through all three gates to a signed workbook.
 
 > **The one line that explains the design:** software does the reading, checking and counting;
 > a human makes every decision that could be wrong in a way that matters.
